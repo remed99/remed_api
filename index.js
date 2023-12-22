@@ -42,20 +42,11 @@ const start = async () => {
     app.listen(process.env.PORT, () => {
       console.log(`Server listening on port ${process.env.PORT}...`); //
     });
-    // dataPopulator();
+   
   } catch (err) {
     console.error(err);
   }
 };
 start();
 
-// const dataPopulator = async()=>{
-//  try {
-//     const data = require('./data/medicinedata');
-//     const medicine = require('./models/medicine.model')
-//     const response = await medicine.create(data);
-//     console.log("Data populated successfully..")
-//  } catch (error) {
-//     console.log(error);
-//  }
-// }
+
