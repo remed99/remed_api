@@ -9,13 +9,6 @@ const getMedicine = asyncErrorHandler(async (req, res, next) => {
 if(search){
 
 
-  // const searchQuery = {
-  //   $or: [
-  //     { brandName: { $fuzzySearch: search } },
-  //     { genericName: { $fuzzySearch: search } },
-  //   ],
-  // };
-
  
 const response = await medicine.find({});
 const fuse = new Fuse(response,{keys: ["brandName","genericName"]});

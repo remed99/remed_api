@@ -3,7 +3,7 @@ const division = require("../models/division.model");
 
 const getDivision = asyncErrorHandler(async (req, res, next) => {
   const { companyName, divisionName, areaName } = req.query;
-  // console.log(req.query);
+  
   let query = {};
   if (companyName) {
     query.companyName = { $regex: companyName, $options: "i" };
@@ -126,4 +126,3 @@ module.exports = {
   getSingleDivision
 };
 
-// const nepaliPharmaCompanies = ["Quest Pharmaceuticals Pvt Ltd", "Nepal Pharmaceuticals Laboratory Pvt Ltd", "Deurali-Janta Pharmaceuticals Pvt Ltd", "Everest Pharmaceuticals Pvt Ltd", "Asian Pharmaceuticals Pvt Ltd"];

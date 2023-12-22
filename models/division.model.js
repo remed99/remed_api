@@ -45,12 +45,12 @@ const divisionSchema =  mongoose.Schema({
     {
       areaName: {
         type: String,
-        // required: [true, "Area name is required.."],
+        
 
       },
       areaContact: {
         type: String,
-        // required: [true, "Contact number is required.."],
+      
         validate: {
           validator: lengValidator,
           message: "Please enter a valid contact number"

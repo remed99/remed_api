@@ -37,4 +37,3 @@ module.exports = {
 };
 
 
-// const nepaliPharmaCompanies = ["Quest Pharmaceuticals Pvt Ltd", "Nepal Pharmaceuticals Laboratory Pvt Ltd", "Deurali-Janta Pharmaceuticals Pvt Ltd", "Everest Pharmaceuticals Pvt Ltd", "Asian Pharmaceuticals Pvt Ltd"];

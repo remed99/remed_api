@@ -4,7 +4,7 @@ const globalErrorHandler = (error, req, res, next) => {
     if(error.name === 'ValidationError'){
         let err = [];
         const k = Object.keys(error.errors);
-        // console.log(k)
+        
         k.forEach(key => {
             newError = {
             msg: error.errors[key].message

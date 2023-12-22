@@ -25,14 +25,14 @@ const login = asyncErrorHandler(async (req, res) => {
         const token = jwt.sign({id: response._id}, secretKey, {expiresIn: "1d"});
         res.status(200).json({success: true, msg: "Login successful....", data: {AccessToken: token, id: response._id, userName: response.userName, isVerified: response.isVerified}});
        }else{
-        // res.status(404).json({success: false, msg: "Password don't match"});
+       
         const passWordError = new Error("Password don't match");
         passWordError.statusCode = 404;
         throw passWordError;
        }
 
     }else{
-        // res.status(404).json({success: false, msg: "Email not found..."})
+        
         const emailError = new Error("Email not found..");
         emailError.statusCode = 404;
         throw emailError;
