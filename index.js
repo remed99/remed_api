@@ -11,13 +11,14 @@ const companyRoute = require("./routes/company.routes");
 const divisionRoute = require("./routes/division.routes");
 const authRoute = require("./routes/auth.routes");
 const contactUsRoute = require("./routes/contactUs.routes")
+const homeRoute = require("./routes/home.route");
 
 //middelwares
 app.use(express.json());
 app.use(cors());
 
 //Routes
-
+app.use('/', homeRoute );
 app.use("/api/v1/medicine", medicineRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/division", divisionRoute);
