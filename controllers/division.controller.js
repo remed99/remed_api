@@ -12,21 +12,23 @@ const getDivision = asyncErrorHandler(async (req, res, next) => {
     query.divisionName = { $regex: divisionName, $options: "i" };
   }
 
-  const result = await division.find(query).sort({companyName: 'asc'});
+  const result = await division.find(query);
   if (result.length) {
     if (areaName) {
-      const areaRegex = new RegExp(areaName, "i");
+      
       const areaInformation = result[0]?.areaInfo;
       const specificAreaInfo = areaInformation?.find((value) => {
-        if (areaRegex.test(value)) {
+        if (value.areaName === areaName) {
           return value;
-        }else{
-         const newError = new Error(`${areaName} area not found...`);
+        }
+       
+      });
+      if(!specificAreaInfo) {
+        const newError = new Error(`${areaName} area not found...`);
          newError.statusCode = 404;
          throw newError;
-
-        }
-      });
+      }
+     
 
       res
         .status(200)
