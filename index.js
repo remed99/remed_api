@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
+const morgan = require("morgan");
 
 //Module imports
 const connect = require("./utilis/dbConnection");
@@ -16,6 +17,7 @@ const homeRoute = require("./routes/home.route");
 //middelwares
 app.use(express.json());
 app.use(cors());
+app.use(morgan('common'));
 
 //Routes
 app.use('/', homeRoute );
